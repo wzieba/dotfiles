@@ -4,11 +4,13 @@ on: [push]
 jobs:
   build:
     name: Install
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v2
-      - run: | 
-          mkdir -p ~/dotfiles-install-dir
-          HOME=~/dotfiles-install-dir 
-          ./install
+      - name: Install Homebrew 
+        run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+      - name: Add homebrew to PATH
+        run: echo "::add-path::/usr/local/bin"
+      - run: brew unlink node@12
+      - run: "./install --verbose"
 

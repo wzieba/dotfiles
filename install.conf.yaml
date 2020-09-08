@@ -2,4 +2,10 @@
 - link: 
     ~/.zshrc:
     ~/.hammerspoon:
-- shell: []
+    ~/.Brewfile:
+- shell:
+  - git submodule sync --recursive
+  - 
+      command: brew bundle --global --debug
+      stdout: true
+
