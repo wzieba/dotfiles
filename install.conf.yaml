@@ -1,3 +1,5 @@
 - clean: []
-- link: {}
+- link: 
+    ~/.zshrc:
+    ~/.hammerspoon:
 - shell: []
