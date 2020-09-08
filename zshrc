@@ -13,7 +13,6 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 
 DISABLE_UPDATE_PROMPT="true"
-ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 
 plugins=(git zsh-autosuggestions autojump)
