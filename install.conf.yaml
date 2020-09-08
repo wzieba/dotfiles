@@ -3,6 +3,7 @@
     ~/.zshrc:
     ~/.hammerspoon:
     ~/.Brewfile:
+    ~/.alacritty.yml:
 - shell:
   - git submodule sync --recursive
   - 
