@@ -4,6 +4,7 @@
     ~/.hammerspoon:
     ~/.Brewfile:
     ~/.alacritty.yml:
+    ~/.tmux.conf:
 - shell:
   - git submodule sync --recursive
   - 
