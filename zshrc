@@ -10,12 +10,13 @@ export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platf
 export ANDROID_NDK="$ANDROID_HOME/ndk/21.0.6113669"
 export ZSH=$HOME/.oh-my-zsh
 
+plugins=(git zsh-autosuggestions autojump tmux)
+
 ZSH_THEME="agnoster"
 
 DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
-
-plugins=(git zsh-autosuggestions autojump)
+ZSH_TMUX_AUTOSTART="true"
 
 source $ZSH/oh-my-zsh.sh
 

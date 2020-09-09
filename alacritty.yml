@@ -1,13 +1,8 @@
 # Colors (Gruvbox dark)
 colors:
-  # Default colors
   primary:
-    # hard contrast: background = '#1d2021'
     background: '#282828'
-    # soft contrast: background = '#32302f'
     foreground: '#ebdbb2'
-
-  # Normal colors
   normal:
     black:   '#282828'
     red:     '#cc241d'
@@ -17,8 +12,6 @@ colors:
     magenta: '#b16286'
     cyan:    '#689d6a'
     white:   '#a89984'
-
-  # Bright colors
   bright:
     black:   '#928374'
     red:     '#fb4934'
@@ -29,13 +22,10 @@ colors:
     cyan:    '#8ec07c'
     white:   '#ebdbb2'
 
-# Font configuration (changes require restart)
 font:
-  # The size to use.
   size: 16
   normal:
     family: FiraCode Nerd Font Mono
-    # Style can be specified to pick a specific face.
     style: Regular
 
   bold:
@@ -48,3 +38,12 @@ font:
 
 window:
   decorations: "none"
+  padding:
+    x: 6
+    y: 6
+
+scrolling:
+  # Maximum number of lines in the scrollback buffer.
+  # Specifying '0' will disable scrolling.
+  history: 5000
+
