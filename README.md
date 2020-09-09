@@ -6,6 +6,6 @@ Collection of my dotfiles, backed by [Dotbot](https://github.com/anishathalye/do
 Dump Brewfile
 ----------------
 ```shell
-brew bundle dump -force --no-lock
+brew bundle dump --force --no-lock --describe
 ```
 

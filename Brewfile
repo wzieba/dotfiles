@@ -1,8 +1,10 @@
+tap "adoptopenjdk/openjdk"
 tap "github/gh"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
 tap "remotemobprogramming/brew"
+cask "adoptopenjdk8"
 # Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
 # Shell extension to jump to frequently used directories
@@ -59,6 +61,6 @@ brew "wget"
 brew "yarn"
 # Swift handover for remote mobs using git. mob is a CLI tool written in GO. It keeps your master branch clean and creates WIP commits on mob-session branch.
 brew "remotemobprogramming/brew/mob"
-cask "adoptopenjdk"
 cask "alacritty"
 cask "hammerspoon"
+cask "unshaky"
