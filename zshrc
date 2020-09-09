@@ -34,4 +34,3 @@ eval "$(starship init zsh)"
 export PATH="/Users/wzieba/companion-android/git-fuzzy/bin:$PATH"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export TERM=xterm-256color
