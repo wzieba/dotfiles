@@ -13,6 +13,8 @@
         path: config/starship.toml
     ~/.config/karabiner/karabiner.json:
         path: config/karabiner/karabiner.json
+    ~/.config/nvim/init.vim:
+      path: config/nvim/init.vim
 - shell:
   - git submodule sync --recursive
   - 
