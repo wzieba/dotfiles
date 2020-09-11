@@ -11,8 +11,8 @@
     ~/.tmux.conf:
     ~/.config/starship.toml:
         path: config/starship.toml
-    ~/.config/karabiner/karabiner.json:
-        path: config/karabiner/karabiner.json
+    ~/.config/karabiner.edn:
+        path: config/karabiner/karabiner.edn
     ~/.config/nvim/init.vim:
       path: config/nvim/init.vim
 - shell:
@@ -20,4 +20,8 @@
   - 
       command: brew bundle --global --debug
       stdout: true
-
+  - mkdir ~/.config/karabiner
+  - cp config/karabiner/karabiner.json ~/.config/karabiner/
+  - 
+      command: goku
+      stdout: true
