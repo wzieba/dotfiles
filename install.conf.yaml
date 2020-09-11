@@ -1,3 +1,7 @@
+- defaults:
+    link:
+      create: true
+
 - clean: []
 - link: 
     ~/.zshrc:
@@ -5,6 +9,8 @@
     ~/.Brewfile:
     ~/.alacritty.yml:
     ~/.tmux.conf:
+    ~/.config/starship.toml:
+        path: config/starship.toml
 - shell:
   - git submodule sync --recursive
   - 
