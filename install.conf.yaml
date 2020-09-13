@@ -25,3 +25,4 @@
   - 
       command: goku
       stdout: true
+  - gh config set git_protocol ssh
