@@ -1,8 +1,10 @@
 tap "adoptopenjdk/openjdk"
 tap "github/gh"
+tap "heroku/brew"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+tap "homebrew/services"
 tap "remotemobprogramming/brew"
 tap "yqrashawn/goku"
 cask "adoptopenjdk8"
@@ -24,6 +26,8 @@ brew "ruby"
 brew "fastlane"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
+# Generate introspection data for GObject libraries
+brew "gobject-introspection"
 # OpenType text shaping engine
 brew "harfbuzz"
 # Play, record, convert, and stream audio and video
@@ -42,6 +46,10 @@ brew "git"
 brew "gradle"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Object-relational database system
+brew "postgresql", restart_service: true
+# Data loading tool for PostgreSQL
+brew "pgloader"
 # Colored logcat script to show entries only for specified app
 brew "pidcat"
 # Python version management
@@ -60,12 +68,16 @@ brew "tmux"
 brew "wget"
 # JavaScript package manager
 brew "yarn"
+# Everything you need to get started with Heroku
+brew "heroku/brew/heroku"
 # Swift handover for remote mobs using git. mob is a CLI tool written in GO. It keeps your master branch clean and creates WIP commits on mob-session branch.
 brew "remotemobprogramming/brew/mob"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
 cask "alacritty"
+cask "docker"
 cask "hammerspoon"
 cask "karabiner-elements"
 cask "rectangle"
+cask "skype"
 cask "unshaky"
