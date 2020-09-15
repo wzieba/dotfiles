@@ -6,7 +6,6 @@ tap "homebrew/cask"
 tap "homebrew/core"
 tap "homebrew/services"
 tap "remotemobprogramming/brew"
-tap "yqrashawn/goku"
 cask "adoptopenjdk8"
 # Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
@@ -72,8 +71,6 @@ brew "yarn"
 brew "heroku/brew/heroku"
 # Swift handover for remote mobs using git. mob is a CLI tool written in GO. It keeps your master branch clean and creates WIP commits on mob-session branch.
 brew "remotemobprogramming/brew/mob"
-# karabiner configurator
-brew "yqrashawn/goku/goku"
 cask "alacritty"
 cask "docker"
 cask "hammerspoon"

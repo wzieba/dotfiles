@@ -11,8 +11,6 @@
     ~/.tmux.conf:
     ~/.config/starship.toml:
         path: config/starship.toml
-    ~/.config/karabiner.edn:
-        path: config/karabiner/karabiner.edn
     ~/.config/nvim/init.vim:
       path: config/nvim/init.vim
 - shell:
@@ -22,7 +20,4 @@
       stdout: true
   - mkdir ~/.config/karabiner
   - cp config/karabiner/karabiner.json ~/.config/karabiner/
-  - 
-      command: goku
-      stdout: true
   - gh config set git_protocol ssh
