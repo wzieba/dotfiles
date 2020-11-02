@@ -18,6 +18,4 @@
   - 
       command: brew bundle --global --debug
       stdout: true
-  - mkdir ~/.config/karabiner
-  - cp config/karabiner/karabiner.json ~/.config/karabiner/
   - gh config set git_protocol ssh
