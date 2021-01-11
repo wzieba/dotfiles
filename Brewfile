@@ -59,6 +59,8 @@ brew "postgresql", restart_service: true
 brew "pgloader"
 # Colored logcat script to show entries only for specified app
 brew "pidcat"
+# Java class file shrinker, optimizer, and obfuscator
+brew "proguard"
 # Python version management
 brew "pyenv"
 # Install various Ruby versions and implementations
@@ -89,6 +91,7 @@ cask "alfred"
 cask "charles"
 cask "docker"
 cask "figma"
+cask "gitkraken"
 cask "grammarly"
 cask "hammerspoon"
 cask "karabiner-elements"
