@@ -10,7 +10,6 @@ jobs:
       - name: Install Homebrew 
         run: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
       - name: Add homebrew to PATH
-        run: echo "::add-path::/usr/local/bin"
-      - run: brew unlink node@12
+        run: echo "/usr/local/bin" >> $GITHUB_PATH
       - run: "./install --verbose"
 
