@@ -9,3 +9,7 @@ Dump Brewfile
 brew bundle dump --force --no-lock --describe
 ```
 
+Android Studio settings
+----------------
+Stored in private submodule because of security concernes. To sync between machines, [Settings Repository](https://www.jetbrains.com/help/idea/sharing-your-ide-settings.html#settings-repository) is used.
+
