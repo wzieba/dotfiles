@@ -21,8 +21,6 @@ brew "docker"
 brew "eot-utils"
 # Modern replacement for 'ls'
 brew "exa"
-# Powerful, clean, object-oriented scripting language
-brew "ruby"
 # Easiest way to build and release mobile apps
 brew "fastlane"
 # GNU Transport Layer Security (TLS) Library
@@ -67,6 +65,8 @@ brew "pyenv"
 brew "ruby-build"
 # Ruby version manager
 brew "rbenv"
+# Powerful, clean, object-oriented scripting language
+brew "ruby"
 # Display and control your Android device
 brew "scrcpy"
 # Cross-shell prompt for astronauts
@@ -86,18 +86,23 @@ brew "heroku/brew/heroku"
 # Swift handover for remote mobs using git. mob is a CLI tool written in GO. It keeps your master branch clean and creates WIP commits on mob-session branch.
 brew "remotemobprogramming/brew/mob"
 cask "adoptopenjdk8"
-cask "alacritty"
 cask "alfred"
+cask "bitwarden"
 cask "charles"
 cask "docker"
 cask "figma"
 cask "gitkraken"
 cask "grammarly"
 cask "hammerspoon"
+cask "iterm2"
+cask "jetbrains-toolbox"
 cask "karabiner-elements"
 cask "postman"
 cask "rectangle"
 cask "sketch"
 cask "skype"
+cask "slack"
+cask "spotify"
+cask "telegram"
 cask "unshaky"
 cask "visualvm"

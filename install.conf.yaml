@@ -7,7 +7,6 @@
     ~/.zshrc:
     ~/.hammerspoon:
     ~/.Brewfile:
-    ~/.alacritty.yml:
     ~/.tmux.conf:
     ~/.config/starship.toml:
         path: config/starship.toml
