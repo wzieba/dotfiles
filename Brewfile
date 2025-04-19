@@ -93,6 +93,8 @@ brew "autojump"
 brew "automake"
 # C library implementing the SSH2 protocol
 brew "libssh2"
+# C library of Git core methods that is re-entrant and linkable
+brew "libgit2"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # GNU multiple precision arithmetic library
@@ -173,8 +175,6 @@ brew "fb303"
 brew "edencommon"
 # Tools to convert fonts from OTF/TTF to EOT format
 brew "eot-utils"
-# Modern replacement for 'ls'
-brew "exa"
 # Modern, maintained replacement for ls
 brew "eza"
 # ISO AAC audio encoder
@@ -439,6 +439,8 @@ cask "corretto@8"
 cask "mitmproxy"
 # Unofficial Google Nearby Share app
 cask "neardrop"
+# Control your tools with a few keystrokes
+cask "raycast"
 # Quicklook extension for source files
 cask "syntax-highlight"
 # All-in-One Java Troubleshooting Tool
