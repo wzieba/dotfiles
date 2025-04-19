@@ -8,7 +8,6 @@ tap "heroku/brew"
 tap "jakewharton/repo"
 tap "jetbrains/utils"
 tap "nikitabobko/tap"
-tap "tumblr/tools", "https://github.tumblr.net/Tumblr/dev-tools.git"
 # Search tool like grep, but optimized for programmers
 brew "ack"
 # Generic-purpose lossless compression algorithm by Google
@@ -43,8 +42,6 @@ brew "jpeg-xl"
 brew "libvmaf"
 # Codec library for encoding and decoding AV1 video streams
 brew "aom"
-# Mozilla CA certificate store
-brew "ca-certificates"
 # Software library to render fonts
 brew "freetype"
 # XML-based font configuration API for X Windows
@@ -83,10 +80,10 @@ brew "graphite2"
 brew "harfbuzz"
 # Tool for reverse engineering 3rd party, closed, binary Android apps
 brew "apktool"
+# Mozilla CA certificate store
+brew "ca-certificates"
 # Macro processing language
 brew "m4"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Shell extension to jump to frequently used directories
 brew "autojump"
 # Tool for generating GNU Standards-compliant Makefiles
@@ -111,6 +108,24 @@ brew "bison"
 brew "black"
 # Collection of portable C++ source libraries
 brew "boost"
+# Asynchronous event library
+brew "libevent"
+# International domain name library (IDNA2008, Punycode and TR46)
+brew "libidn2"
+# HTTP/2 C Library
+brew "libnghttp2"
+# ASN.1 structure parser library
+brew "libtasn1"
+# Low-level cryptographic library
+brew "nettle"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
+# Validating, recursive, caching DNS resolver
+brew "unbound"
+# GNU Transport Layer Security (TLS) Library
+brew "gnutls"
+# Emacs dependency management
+brew "cask"
 # C parser in Python
 brew "pycparser"
 # C Foreign Function Interface for Python
@@ -129,8 +144,6 @@ brew "cmocka"
 brew "libyaml"
 # Dependency manager for Cocoa projects
 brew "cocoapods"
-# HTTP/2 C Library
-brew "libnghttp2"
 # Generic library support script
 brew "libtool"
 # Libraries to talk to Microsoft SQL Server and Sybase databases
@@ -157,8 +170,6 @@ brew "diff-so-fancy"
 brew "docker"
 # Isolated development environments using Docker
 brew "docker-compose"
-# Asynchronous event library
-brew "libevent"
 # Compression/decompression library aiming for high speed
 brew "snappy"
 # Collection of reusable C++ library artifacts developed at Facebook
@@ -191,18 +202,6 @@ brew "flac"
 brew "frei0r"
 # Implementation of the Unicode BiDi algorithm
 brew "fribidi"
-# International domain name library (IDNA2008, Punycode and TR46)
-brew "libidn2"
-# ASN.1 structure parser library
-brew "libtasn1"
-# Low-level cryptographic library
-brew "nettle"
-# Library to load and enumerate PKCS#11 modules
-brew "p11-kit"
-# Validating, recursive, caching DNS resolver
-brew "unbound"
-# GNU Transport Layer Security (TLS) Library
-brew "gnutls"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame"
 # Library for JPEG-2000 image manipulation
@@ -269,8 +268,6 @@ brew "ffmpeg@4"
 brew "node"
 # Firebase command-line tools
 brew "firebase-cli"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Utilities to create and convert Web Open Font File (WOFF) files
 brew "woff2"
 # Command-line outline and bitmap font editor/converter
@@ -347,8 +344,6 @@ brew "neovim"
 brew "nghttp2"
 # Manage multiple Node.js versions
 brew "nvm"
-# Cryptography and SSL/TLS Toolkit
-brew "openssl@1.1"
 # Open Visual Inference And Optimization toolkit for AI inference
 brew "openvino"
 # 7-Zip (high compression file archiver) implementation
@@ -365,14 +360,16 @@ brew "pkgdiff"
 brew "postgresql@14"
 # Java class file shrinker, optimizer, and obfuscator
 brew "proguard"
-# Python docstring style checker
-brew "pydocstyle"
 # Python version management
 brew "pyenv"
 # Python Language Server for the Language Server Protocol
 brew "python-lsp-server"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.11"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Generic machine emulator and virtualizer
@@ -385,8 +382,6 @@ brew "rbenv"
 brew "repo"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Powerful, clean, object-oriented scripting language
-brew "ruby@2.7"
 # Rust toolchain installer
 brew "rustup"
 # Display and control your Android device
@@ -395,8 +390,6 @@ brew "scrcpy"
 brew "shellcheck"
 # Cross-shell prompt for astronauts
 brew "starship"
-# Tool to enforce Swift style and conventions
-brew "swiftlint"
 # Change macOS audio source from the command-line
 brew "switchaudio-osx"
 # Tool Command Language
@@ -425,22 +418,29 @@ brew "heroku/brew/heroku"
 brew "jakewharton/repo/dependency-tree-diff"
 # Script to wait for an artifact to appear on Maven Central or to monitor coordinates for new versions
 brew "jakewharton/repo/dependency-watch"
-# Acts as a VPN over WireGuard protocol
-brew "tumblr/tools/tunguard"
 # Command-line interface for 1Password
 cask "1password-cli"
 # Android SDK component
 cask "android-platform-tools"
+# Chromium based browser
+cask "arc"
 # OpenJDK distribution from Amazon
 cask "corretto@17"
 # OpenJDK distribution from Amazon
 cask "corretto@8"
+cask "font-hack-nerd-font"
+# Convert your caps lock key or any of your modifier keys to the hyper key
+cask "hyperkey"
+# Terminal emulator as alternative to Apple's Terminal app
+cask "iterm2"
 # Intercept, modify, replay, save HTTP/S traffic
 cask "mitmproxy"
 # Unofficial Google Nearby Share app
 cask "neardrop"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
 # Quicklook extension for source files
 cask "syntax-highlight"
 # All-in-One Java Troubleshooting Tool
