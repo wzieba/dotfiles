@@ -429,8 +429,6 @@ brew "jakewharton/repo/dependency-watch"
 brew "tumblr/tools/tunguard"
 # Command-line interface for 1Password
 cask "1password-cli"
-# Collection of apps and services for photography, design, video, web, and UX
-cask "adobe-creative-cloud"
 # Android SDK component
 cask "android-platform-tools"
 # OpenJDK distribution from Amazon
