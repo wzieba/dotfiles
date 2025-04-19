@@ -15,5 +15,5 @@
   - gh config set git_protocol ssh
   - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
   - yes | $(brew --prefix)/opt/fzf/install
-  - git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+  - source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 

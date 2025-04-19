@@ -415,6 +415,8 @@ brew "wget"
 brew "wp-cli"
 # JavaScript package manager
 brew "yarn"
+# Fish-like fast/unobtrusive autosuggestions for zsh
+brew "zsh-autosuggestions"
 # Build runner for use with Buildkite
 brew "buildkite/buildkite/buildkite-agent"
 # Everything you need to get started with Heroku
