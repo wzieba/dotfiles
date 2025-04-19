@@ -1,77 +1,89 @@
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="$PATH:/Users/wzieba/bin"
-alias gw='./gradlew'
-eval "$(rbenv init -)"
+alias gw='$HOME/gw.sh'
+
+eval "$(rbenv init - zsh)"
 eval "$(pyenv init -)"
+export PATH=/opt/homebrew/bin:$PATH
 
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/emulator:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$ANDROID_HOME/tools/bin
 export ANDROID_NDK="$ANDROID_HOME/ndk/21.0.6113669"
 export ZSH=$HOME/.oh-my-zsh
+export PATH="/opt/homebrew/opt/python@3.11/libexec/bin:$PATH"
+export JAVA_HOME=/Users/wzieba/Library/Java/JavaVirtualMachines/corretto-17.0.14.7.1/Contents/Home
+export PATH="/Users/wzieba/git-fuzzy/bin:$PATH"
+export PATH="/usr/local/opt/php@7.4/bin:$PATH"
 
-plugins=(git zsh-autosuggestions autojump tmux)
+export NVM_DIR="$HOME/.nvm"
+  [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"  # This loads nvm
+  [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+plugins=(git zsh-autosuggestions autojump zsh-syntax-highlighting)
 
 ZSH_THEME="agnoster"
 
 DISABLE_UPDATE_PROMPT="true"
 COMPLETION_WAITING_DOTS="true"
-#ZSH_TMUX_AUTOSTART="true"
 
 source $ZSH/oh-my-zsh.sh
+eval "$(starship init zsh)"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="/Users/wzieba/git-fuzzy/bin:$PATH"
 
 alias cat=bat
 alias vim=nvim
+alias ls=eza
+
+# Git Diff
 alias gd="git fuzzy diff"
-alias ls=exa
-alias gbr='git checkout $(git branch | fzf | tr -d "*")'
+# Git Checkout Trunk
+alias gct='git checkout trunk'
+# Git Last Commit
+alias glc="git rev-parse HEAD | tr -d '\n' | pbcopy"
+# Watch PR
+alias wpr="gh pr checks --watch && osascript -e 'display notification \"PR checks completed\" with title \"Github\" sound name \"hero\"'"
 
-eval "$(starship init zsh)"
-
-export PATH="/Users/wzieba/companion-android/git-fuzzy/bin:$PATH"
 [ -f /usr/local/etc/profile.d/autojump.sh ] && . /usr/local/etc/profile.d/autojump.sh
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
-
-fzf-git-branch() {
-    git rev-parse HEAD > /dev/null 2>&1 || return
-
-    git branch --color=always --all --sort=-committerdate |
-        grep -v HEAD |
-        fzf --height 50% --ansi --no-multi --preview-window right:65% \
-            --preview 'git log -n 50 --color=always --date=short --pretty="format:%C(auto)%cd %h%d %s" $(sed "s/.* //" <<< {})' |
-        sed "s/.* //"
+# Checkout fuzzy
+cf() {
+  git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads/ \
+    | fzf --layout=reverse --height=25% --border=rounded --prompt="Checkout > " --info=inline \
+    | xargs -r git checkout
 }
 
-fzf-git-checkout() {
-    git rev-parse HEAD > /dev/null 2>&1 || return
-
-    local branch
-
-    branch=$(fzf-git-branch)
-    if [[ "$branch" = "" ]]; then
-        echo "No branch selected."
-        return
-    fi
-
-    # If branch name starts with 'remotes/' then it is a remote branch. By
-    # using --track and a remote branch name, it is the same as:
-    # git checkout -b branchName --track origin/branchName
-    if [[ "$branch" = 'remotes/'* ]]; then
-        git checkout --track $branch
-    else
-        git checkout $branch;
-    fi
+# Find in files fuzzy
+ff() {
+  fd --type f --hidden --exclude .git \
+    | fzf --layout=reverse --height=25% --border=rounded --prompt="Find > " --info=inline \
+    | xargs nvim
 }
 
-spire() {
-    adb shell am broadcast -a io.spire.HEALTH_TAG_COMMAND --es health_tag_state "$1"
+# Neovim fuzzy search
+nfs() {
+  rg --hidden --no-heading --line-number --color=always --smart-case --glob '!.git/*' "" \
+    | fzf --ansi --layout=reverse --height=25% --border=rounded \
+          --prompt="Find in files > " --info=inline \
+          --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
+          --delimiter : \
+          --bind 'enter:execute(nvim {1} +{2})'
 }
 
-alias gcf='fzf-git-checkout'
+# Android fuzzy search
+afs() {
+  rg --hidden --no-heading --line-number --color=always --smart-case --glob '!.git/*' "" \
+    | fzf --ansi --layout=reverse --height=25% --border=rounded \
+          --prompt="Find in files > " --info=inline \
+          --preview 'bat --style=numbers --color=always --highlight-line {2} {1}' \
+          --delimiter : \
+          --bind "enter:execute(studio --line {2} {1})"
+}
 
-function gi() { curl -sLw n https://www.toptal.com/developers/gitignore/api/$@ ;}
+set -o vi
+KEYTIMEOUT=1
 
